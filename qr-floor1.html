@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>TWINHS Hazard Map QR Codes</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+
+<body>
+
+    <h1>TWINHS Hazard Map QR Codes</h1>
+
+    <div id="qr1" class="qr"></div>
+
+    <script>
+        new QRCode(document.getElementById("qr1"), {
+            text: "https://greenblobby.github.io/DRR-HTML/shsf1.html",
+            width: 250,
+            height: 250,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+    <h2 style="text-align: center;">Scan the QR code to view the Floor 1 Hazard Map</h2>
+
+</body>
+
+</html>
+
+<style>
+    .qr {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+</style>
