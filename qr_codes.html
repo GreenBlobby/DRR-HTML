@@ -43,6 +43,21 @@
 
     <h2 style="text-align: center;">Scan the QR code to view the Floor 1 Hazard Mapping</h2>
 
+    <div id="qr782" class="qr"></div>
+
+    <script>
+        new QRCode(document.getElementById("qr782"), {
+            text: "https://greenblobby.github.io/DRR-HTML/g7-8f2.html",
+            width: 250,
+            height: 250,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+    <h2 style="text-align: center;">Scan the QR code to view the Floor 2 Hazard Mapping</h2>
+
 </body>
 
 </html>
