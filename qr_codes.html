@@ -11,6 +11,8 @@
 
     <h2>SHS Building</h2>
 
+
+    <h3>Floor 1</h3>
     <div id="qrshs1" class="qr"></div>
 
     <script>
@@ -25,6 +27,22 @@
     </script>
 
     <h2 style="text-align: center;">Scan the QR code to view the Floor 1 Hazard Mapping</h2>
+
+    <h3>Floor 2</h3>
+    <div id="qrshs2" class="qr"></div>
+
+    <script>
+        new QRCode(document.getElementById("qrshs2"), {
+            text: "https://greenblobby.github.io/DRR-HTML/shsf2.html",
+            width: 250,
+            height: 250,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+    <h2 style="text-align: center;">Scan the QR code to view the Floor 2 Hazard Mapping</h2>
 
     <h2>G7-8 Building</h2>
 
@@ -70,7 +88,8 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h3 {
         text-align: center;
     }
 </style>
