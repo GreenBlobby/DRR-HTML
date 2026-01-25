@@ -76,6 +76,25 @@
 
     <h2 style="text-align: center;">Scan the QR code to view the Floor 2 Hazard Mapping</h2>
 
+    <h2>Gym</h2>
+
+    <div id="qrGym" class="qr"></div>
+
+    <script>
+        new QRCode(document.getElementById("qrGym"), {
+            text: "https://greenblobby.github.io/DRR-HTML/gym.html",
+            width: 250,
+            height: 250,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+    <h2 style="text-align: center;">Scan the QR Code to vie Gym Hazard Mapping.</h2>
+
+    <a href="index.html">Back to Home Page</a>
+
 </body>
 
 </html>
