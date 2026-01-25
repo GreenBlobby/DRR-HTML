@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <title>Hazard Mapping</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(rgb(67, 67, 67), rgb(255, 177, 177), rgb(6, 6, 6));
+            min-height: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .floor {
+            text-align: center;
+        }
+
+        .area {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .hazard {
+            position: relative;
+            max-width: 600%;
+            margin: auto;
+            margin-top: 20px;
+            color: rgb(165, 0, 0);
+        }
+
+        .hazard h3 {
+            position: relative;
+            max-width: 600%;
+            margin: auto;
+            margin-top: 20px;
+            color: rgb(235, 0, 0);
+            text-shadow:
+                0 0 2px rgba(0, 0, 0, 0.85),
+                0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hazard h4 {
+            color: black;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: rgba(255, 233, 233, 0.9);
+            background-clip: margin-box;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+        }
+
+        .hazard img {
+            opacity: 1;
+            display: block;
+            margin: 5px auto;
+            width: 50%;
+            border: 0.5px solid #580000;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .cycle {
+            cursor: pointer;
+        }
+    </style>
+
+    <h1>SHS Building</h1>
+
+    <div class="floor">
+        <h2>Floor 2</h2>
+
+        <div class="area">
+            <h2>Hallway Hazards</h2>
+
+            <div class="hazard">
+                <h3><u>Exposed Wires</u></h3>
+
+                <img class="cycle" src="Images/ExpWO1_Hallway_Floor2_SHS.jpg" alt="Exposed Wires Hazard Image"
+                    data-images="Images/ExpWO1_Hallway_Floor2_SHS.jpg,Images/ExpWO2_Hallway_Floor2_SHS.jpg,Images/ExpWO3_Hallway_Floor2_SHS.jpg,Images/ExpWO4_Hallway_Floor2_SHS.jpg,Images/ExpWO5_Hallway_Floor2_SHS.jpg,Images/ExpWO6_Hallway_Floor2_SHS.jpg"
+                    onclick="cycleImage(this)">
+                <h5>Click image to cycle through hazard images.</h5>
+
+                <h4>This is a hazard because they can start fires, and they are also more likely to get damaged due to
+                    the exposed wiring.</h4>
+
+            </div>
+
+            <div class="area">
+                <h2>Aristotle Classroom Hazards</h2>
+
+                <div class="hazard">
+                    <h3><u>Poorly Installed Fans</u></h3>
+
+                    <img class="cycle" src="Images/Fans1_Aris_Floor2_SHS.jpg" alt="Poorly Installed Fans Hazard Image"
+                        data-images="Images/Fans1_Aris_Floor2_SHS.jpg,Images/Fans2_Aris_Floor2_SHS.jpg,Images/Fans3_Aris_Floor2_SHS.jpg"
+                        onclick="cycleImage(this)">
+                    <h5>Click image to cycle through hazard images.</h5>
+
+                    <h4>Poorly installed fans are a hazard because there is a high possibility that they could cause a
+                        fire,
+                        and there is also a chance they could fall on students due to improper installation.</h4>
+                </div>
+
+                <div class="hazard">
+                    <h3><u>Rusted Metal</u></h3>
+
+                    <img src="Images/MetalR_Aris_Floor2_SHS.jpg" alt="Rusted Metal Hazard Image">
+
+                    <p>
+                    <h4>This is a hazard because rust weakens the metal's hold; as a result, it could fall on teachers
+                        while they are teaching due to the weakened structure.</h4>
+                    </p>
+                </div>
+
+                <div class="hazard">
+                    <h3><u>Missing/Broken Knobs</u></h3>
+
+                    <img src="Images/KnobM_Aris_floor2_SHS.jpg" alt="Missing/Broken Knobs Hazard Image">
+
+                    <p>
+                    <h4>This is a hazard because in the event of an earthquake, there is a high chance that children
+                        will have difficulty getting out of the room due to the lack of door knobs/handles..</h4>
+                    </p>
+                </div>
+            </div>
+
+
+
+            <script>
+                function cycleImage(img) {
+                    const images = img.dataset.images.split(",");
+                    let index = img.dataset.index ? parseInt(img.dataset.index) : 0;
+
+
+                    img.style.opacity = 0;
+
+                    setTimeout(() => {
+                        index = (index + 1) % images.length;
+                        img.src = images[index];
+                        img.dataset.index = index;
+
+
+                        requestAnimationFrame(() => {
+                            img.style.opacity = 1;
+                        });
+
+                    }, 400);
+                }
+            </script>
+            </body>
+
+</html>
