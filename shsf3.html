@@ -64,10 +64,6 @@
             border: 0.5px solid #580000;
             transition: opacity 0.5s ease-in-out;
         }
-
-        .cycle {
-            cursor: pointer;
-        }
     </style>
 </head>
 <h1>SHS Building</h1>
@@ -79,20 +75,16 @@
         <h2>Hallway Hazards</h2>
 
         <div class="hazard">
-            <h3><u>Exposed Wires</u></h3>
+            <h3><u>Ceiling Hole</u></h3>
 
-            <img class="cycle" src="Images/ExpWO1_Hallway_Floor2_SHS.jpg" alt="Exposed Wires Hazard Image"
-                data-images="Images/ExpWO1_Hallway_Floor2_SHS.jpg,Images/ExpWO2_Hallway_Floor2_SHS.jpg,Images/ExpWO3_Hallway_Floor2_SHS.jpg,Images/ExpWO4_Hallway_Floor2_SHS.jpg,Images/ExpWO5_Hallway_Floor2_SHS.jpg,Images/ExpWO6_Hallway_Floor2_SHS.jpg"
-                onclick="cycleImage(this)">
-            <h5>Click image to cycle through hazard images.</h5>
+            <img src="Images\Ceiling_Hallway_Floor3_SHS.jpg" alt="Ceiling Hole Hazard Image">
 
-            <h4>This is a hazard because they can start fires, and they are also more likely to get damaged due to
-                the exposed wiring.</h4>
+            <h4></h4>
 
         </div>
 
         <div class="area">
-            <h2>HUMMS 1 Classroom Hazards</h2>
+            <h2>Classroom 1 Hazards</h2>
 
             <div class="hazard">
                 <h3><u>Poorly Installed Fans</u></h3>
@@ -131,7 +123,7 @@
         </div>
 
         <div class="area">
-            <h2>HUMMS 2 Classroom Hazards</h2>
+            <h2>Classroom 2 Hazards</h2>
 
             <div class="hazard">
                 <h3><u>Poorly Installed Fans</u></h3>
@@ -183,28 +175,7 @@
 
             </div>
         </div>
-        <script>
-            function cycleImage(img) {
-                const images = img.dataset.images.split(",");
-                images.forEach(src => { const preload = new Image(); preload.src = src; });
-                let index = img.dataset.index ? parseInt(img.dataset.index) : 0;
 
-
-                img.style.opacity = 0;
-
-                setTimeout(() => {
-                    index = (index + 1) % images.length;
-                    img.src = images[index];
-                    img.dataset.index = index;
-
-
-                    requestAnimationFrame(() => {
-                        img.style.opacity = 1;
-                    });
-
-                }, 500);
-            }
-        </script>
         </body>
 
 </html>

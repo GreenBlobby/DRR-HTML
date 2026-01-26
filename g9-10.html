@@ -1,0 +1,230 @@
+<html>
+
+<head>
+    <title>Hazard Mapping</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-image: linear-gradient(rgb(45, 45, 255), rgb(255, 177, 177), rgb(255, 44, 44));
+            min-height: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .floor {
+            text-align: center;
+        }
+
+        .area {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .hazard {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 20px;
+            color: rgb(165, 0, 0);
+        }
+
+        .hazard h3 {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 20px;
+            color: rgb(235, 0, 0);
+            text-shadow:
+                0 0 2px rgba(0, 0, 0, 0.85),
+                0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hazard h4 {
+            color: black;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: rgba(255, 233, 233, 0.9);
+            background-clip: margin-box;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+        }
+
+        .hazard img {
+            opacity: 1;
+            display: block;
+            margin: 5px auto;
+            width: 50%;
+            border: 0.5px solid #580000;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .cycle {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<h1>G9-10 Building</h1>
+
+<div class="floor">
+    <h2>Floor 2</h2>
+
+    <div class="area">
+        <h2>Hallway Hazards</h2>
+
+        <div class="hazard">
+            <h3><u>Rusty Metal</u></h3>
+
+            <img class="cycle" src="Images/MetalR1_Hallwayg9-10.jpg" alt="Exposed Wires Hazard Image"
+                data-images="Images/MetalR1_Hallwayg9-10.jpg,Images/MetalR2_Hallwayg9-10.jpg,Images/MetalR3_Hallwayg9-10.jpg"
+                onclick="cycleImage(this)">
+            <h5>Click image to cycle through hazard images.</h5>
+
+            <h4>This is a hazard because it can cause injuries to students, and they may also get tetanus which can make
+                them ill.</h4>
+        </div>
+
+        <div class="hazard">
+            <h3><u>Soil near Hallway</u></h3>
+
+            <img class="cycle" src="Images/Soil_Hallway_g9-10.jpg" alt="">
+
+            <h4>The young trees and loose soil are close to where people walk. If someone steps on the dirt by accident,
+                they could slip or twist their ankle.</h4>
+        </div>
+
+        <div class="hazard">
+            <h3><u>Rotting Ceiling</u>
+
+                <img src="Images/Rot_Hallway_g9-10.jpg" alt="Rotting Ceiling Hazard Image">
+
+                <h4>This is a hazard because in the event of an earthquake, the rotting parts could fall on students and
+                    injure them.</h4>
+        </div>
+
+        <div class="area">
+            <h2>Vacant Room</h2>
+
+            <div class="hazard">
+                <h3><u>Messy Area</u></h3>
+
+                <img src="Images/Mess_Vacant_g9-10.jpg" alt="Messy Area Hazard Image">
+
+                <h4>This is a hazard because during an earthquake, the scattered items may fall on students and cause
+                    injuries.</h4>
+
+                <div class="area">
+                    <h2>Classroom 1</h2>
+
+                    <div class="hazard">
+                        <h3><u>Stains on Ceiling</u></h3>
+
+                        <img src="Images/StainsL_Room1_g-9-10.jpg" alt="Stains on Ceiling Hazard Image">
+
+                        <h4>The dark stains and worn spots mean water might have gotten in over time. This can make the
+                            building materials weak, so more parts could break or fall apart easily.</h4>
+                    </div>
+
+                    <div class="hazard">
+                        <h3><u>Sharp and Exposed Point</u></h3>
+
+                        <img src="Images/Sharp_Room1_g9-10.jpg" alt="Sharp and Exposed Point Hazard Image">
+
+                        <h4>The nail is sticking out from the green wall with its sharp tip up. If students walk by and
+                            bump into it, or reach near the wall without looking, the nail could cut their skin, poke
+                            their hands, or scratch their arms and faces.</h4>
+                    </div>
+
+                    <div class="hazard">
+                        <h3><u>Poor Socket Maintenance</u></h3>
+
+                        <img src="Images/Socket_Room1_g9-10.jpg" alt="Poor Socket Maintenance Hazard Image">
+
+                        <h4>The wall around the outlet is dirty and has marks, which shows it hasn’t been checked or
+                            fixed in a while. If small problems like this are not taken care of, they can turn into big
+                            accidents quickly.</h4>
+                    </div>
+
+                    <div class="hazard">
+                        <h3><u>Rusty and Sharp Doorframe</u></h3>
+
+                        <img src="Images/Dframe_room1_g9-10.jpg" alt="Rusty and Sharp Doorframe Hazard Image">
+
+                        <h4>The green paint on the door frame is chipped off, and there’s a lot of rust underneath. The
+                            rough, sharp edges of the rusty metal can cut students’ hands or arms if they brush against
+                            it while walking through the doorway.</h4>
+                    </div>
+
+                    <div class="hazard">
+                        <h3><u>Slippery Floor</u></h3>
+
+                        <img src="Images/Slip_Room1_g9-10.jpg" alt="Rusty and Sharp Doorframe Hazard Image">
+
+                        <h4>The shiny, waxed floor makes it easy to slip and fall, especially when walking quickly.</h4>
+                    </div>
+
+                    <div class="area">
+                        <h2>Classroom 2</h2>
+
+                        <div class="hazard">
+                            <h3><u>Ceiling Stains</u></h3>
+
+                            <img src="Images/Stains_Room2_g9-10.jpg" alt="Ceiling Stains Hazard Image">
+
+                            <h4>The dark stains and worn spots mean water might have gotten in over time. This can make
+                                the
+                                building materials weak, so more parts could break or fall apart easily.</h4>
+                        </div>
+
+                        <div class="hazard">
+                            <h3><u>Loose Light Frame</u></h3>
+
+                            <img src="Images/Frame_Room2_g9-10.jpg" alt="Broken Frame/Support Hazard Image">
+
+                            <h4>
+                                It’s attached to the broken ceiling and looks loose. If the ceiling breaks more, the
+                                light could fall too and cause injuries.</h4>
+                        </div>
+
+                        <div class="hazard">
+                            <h3><u>Damaged TV Frame</u></h3>
+
+                            <img src="Images/Tv_Room2_g9-10.jpg" alt="Damaged TV Frame Hazard Image">
+
+                            <h4>Small bits from the rusty supports or broken frame might drop down at any time, hurting
+                                people below.</h4>
+                        </div>
+
+                    </div>
+
+                    <script>
+                        function cycleImage(img) {
+                            const images = img.dataset.images.split(",");
+                            images.forEach(src => { const preload = new Image(); preload.src = src; });
+                            let index = img.dataset.index ? parseInt(img.dataset.index) : 0;
+
+
+                            img.style.opacity = 0;
+
+                            setTimeout(() => {
+                                index = (index + 1) % images.length;
+                                img.src = images[index];
+                                img.dataset.index = index;
+
+
+                                requestAnimationFrame(() => {
+                                    img.style.opacity = 1;
+                                });
+
+                            }, 500);
+                        }
+                    </script>
+                    </body>
+
+</html>

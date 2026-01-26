@@ -122,23 +122,23 @@
 
         </div>
     </div>
+    <script>
+        const images = [
+            "Images/WallC1_HAllway_Floor2_G87.jpg",
+            "Images/WallC2_Hallway_Floor2_G87.jpg",
+            "Images/WallC3_Hallway_Floor2_G87.jpg",
+            "Images/WallC4_Hallway_Floor2_G87.jpg"
+        ];
+
+        let currentIndex = 0;
+        const img = document.getElementById("cycleImage");
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            img.onload = () => { img.style.opacity = 1; };
+            img.src = images[currentIndex];
+        }
+    </script>
+
     </body>
 
 </html>
-
-<script>
-    const images = [
-        "Images/WallC1_HAllway_Floor2_G87.jpg",
-        "Images/WallC2_Hallway_Floor2_G87.jpg",
-        "Images/WallC3_Hallway_Floor2_G87.jpg",
-        "Images/WallC4_Hallway_Floor2_G87.jpg"
-    ];
-
-    let currentIndex = 0;
-    const img = document.getElementById("cycleImage");
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        img.onload = () => { img.style.opacity = 1; };
-        img.src = images[currentIndex];
-    }
-</script>

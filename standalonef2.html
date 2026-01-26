@@ -1,0 +1,174 @@
+<html>
+
+<head>
+    <title>Hazard Mapping</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-image: linear-gradient(rgb(45, 45, 255), rgb(255, 177, 177), rgb(255, 44, 44));
+            min-height: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .floor {
+            text-align: center;
+        }
+
+        .area {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .hazard {
+            position: relative;
+            max-width: 600%;
+            margin: auto;
+            margin-top: 20px;
+            color: rgb(165, 0, 0);
+        }
+
+        .hazard h3 {
+            position: relative;
+            max-width: 600%;
+            margin: auto;
+            margin-top: 20px;
+            color: rgb(235, 0, 0);
+            text-shadow:
+                0 0 2px rgba(0, 0, 0, 0.85),
+                0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hazard h4 {
+            color: black;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: rgba(255, 233, 233, 0.9);
+            background-clip: margin-box;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+        }
+
+        .hazard img {
+            opacity: 1;
+            display: block;
+            margin: 5px auto;
+            width: 50%;
+            border: 0.5px solid #580000;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .cycle {
+            cursor: pointer;
+        }
+    </style>
+
+    </style>
+
+    <h1>Standalone Building</h1>
+
+    <div class="floor">
+        <h2>Floor 2</h2>
+
+        <div class="area">
+            <h2>Hallway</h2>
+
+            <div class="hazard">
+                <h3><u>Rusty Wire</u></h3>
+
+                <img src="Images/RWire_Hallway_Floor2_Standalone.jpg" alt="Rusty Wire Hazard Image">
+
+                <p>
+                <h4>Exposed metal wire and rusted.-This became a hazard because it can injure students and they may also
+                    get tetanus due to the wire's rust.</h4>
+                </p>
+            </div>
+
+            <div class="hazard">
+                <h3><u>Open Wire</u></h3>
+
+                <img src="Images/OpenW_Hallway_Floor2_Standalone.jpg" alt="Open Wire Hazard Image">
+
+                <p>
+                <h4>This became a hazard because it may cause a fire, and there is also a high chance that the light
+                    fixture could fall on students due to improper installation.</h4>
+                </p>
+            </div>
+
+            <div class="hazard">
+                <h3><u>Open Ceiling</u></h3>
+
+                <img src="Images/OpenC_Hallway_Floor2_Standalone.jpg" alt="Open Ceiling Hazard Image">
+
+                <p>
+                <h4>This became a hazard because there is a possibility that items from inside may fall on students as
+                    they walk underneath it.</h4>
+                </p>
+            </div>
+
+            <div class="hazard">
+                <h3><u>Cracks on Walls</u></h3>
+
+                <img src="Images/WallC_Hallway_Floor2_Standalone.jpg" alt="Cracks on Walls Hazard Image">
+
+                <p>
+                <h4>This became a hazard because in the event of an earthquake, it could worsen—since there is already a
+                    small crack that may grow larger when an earthquake occurs.</h4>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="area">
+            <h2>Classroom</h2>
+
+            <div class="hazard">
+                <h3><u>Cracks on Ceiling</u></h3>
+
+                <img class="cycle" src="Images/Ceiling1_Classroom_Floor2_Standalone.jpg" alt="Ceiling Hazard Image"
+                    data-images="Images/Ceiling1_Classroom_Floor2_Standalone.jpg,Images/Ceiling2_Classroom_Floor2_Standalone.jpg"
+                    onclick="cycleImage(this)">
+                <h5>Click image to cycle through hazard images.</h5>
+
+                <p>
+                <h4>This became a hazard because in the event of an earthquake, the cracks may worsen and parts of the
+                    ceiling
+                    could fall on students.</h4>
+                </p>
+            </div>
+
+        </div>
+
+        <script>
+            function cycleImage(img) {
+                const images = img.dataset.images.split(",");
+                images.forEach(src => { const preload = new Image(); preload.src = src; });
+                let index = img.dataset.index ? parseInt(img.dataset.index) : 0;
+
+
+                img.style.opacity = 0;
+
+                setTimeout(() => {
+                    index = (index + 1) % images.length;
+                    img.src = images[index];
+                    img.dataset.index = index;
+
+
+                    requestAnimationFrame(() => {
+                        img.style.opacity = 1;
+                    });
+
+                }, 500);
+            }
+        </script>
+
+        </body>
+
+</html>
